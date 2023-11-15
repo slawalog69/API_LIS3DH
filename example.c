@@ -20,6 +20,7 @@ lis3dh_params_t sett = {
 lis3dh_t devlis3dh;
 int main(void) {
 	
+  EnableTiming();
 	lis3dh_init(&devlis3dh , &sett , NULL, NULL);
   while (1)
   {

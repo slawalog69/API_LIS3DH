@@ -607,15 +607,15 @@ static inline void CallbckReadData() {
 	AddCycles(); //GetCycles();
 	/// ~~~~~~~~~  FIFO OVR  ~~~~~~~~~~~~~~~~
 	if (Que_int1 == 0) {
-//		lis3dh_read_xyz_cont(curr_Lis2dh_dev, arr, 32);
-		LIS3DH_get_Values(32);
+		lis3dh_read_xyz_cont(curr_Lis2dh_dev, arr, 32);
+//		LIS3DH_get_Values(32);
 		LIS3DH_setIrq_On_INT_1(I1_WTM);
 		DataRead_cnt = 8;
 		Que_int1 = 1;
 		/// ~~~~~~~~~  FIFO WTM  ~~~~~~~~~~~~~~~~
 	} else if (Que_int1 == 1) {
-//		lis3dh_read_xyz_cont(curr_Lis2dh_dev, arr, 16);  //(16);  //
-		LIS3DH_get_Values(16);
+		lis3dh_read_xyz_cont(curr_Lis2dh_dev, arr, 16);  //(16);  //
+//		LIS3DH_get_Values(16);
 		if (DataRead_cnt)
 			DataRead_cnt--;
 		if (DataRead_cnt == 0) {
